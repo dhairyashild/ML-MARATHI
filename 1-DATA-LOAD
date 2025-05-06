@@ -1,0 +1,20 @@
+# 1. [DATA LOAD]
+df = pd.read_csv('data.csv',               # Path to your CSV file
+                parse_dates=['timestamp'], # Auto-convert this column to datetime
+                dtype={'category': 'category'}, # Optimize memory for categorical data
+                low_memory=False)         # Prevent mixed-type warnings for large files
+
+
+
+
+
+                CSV डेटा मिळवण्यासाठी कोडमध्ये काय बदल करावा आणि का, हे येथे स्पष्ट केले आहे:
+
+parse_dates=['timestamp']: CSV फाईलमध्ये 'timestamp' नावाचा कॉलम नसल्यास एरर देईल.
+उपाय: योग्य तारीख कॉलमचे नाव द्या, किंवा तारीख कॉलम नसल्यास काढून टाका.
+
+dtype={'category': 'category'}: CSV फाईलमध्ये 'category' नावाचा कॉलम नसल्यास एरर देईल.
+उपाय: योग्य category कॉलमचे नाव द्या, किंवा category कॉलम नसल्यास काढून टाका.
+
+low_memory=False: मोठ्या फाईल्ससाठी ठीक आहे, पण लहान फाईल्ससाठी आवश्यक नाही.
+उपाय: मोठ्या फाईल्ससाठी False वापरा, लहान फाईल्ससाठी True वापरा.
